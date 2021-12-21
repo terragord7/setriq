@@ -120,8 +120,8 @@ class TcrDistComponent(Metric):
     >>> distances = metric(sequences)
     """
 
-    def __init__(self, 
-                 substitution_matrix: SubstitutionMatrix, 
+    def __init__(self,
+                 substitution_matrix: SubstitutionMatrix,
                  gap_penalty: float,
                  gap_symbol: str = '-',
                  weight: float = 1.):
@@ -191,7 +191,7 @@ class TcrDist(Metric):
         'TcrDist has been initialized using the default configuration. '
         'Please ensure that the input is a list of dictionaries, each with keys: {}'
     ).format(', '.join(repr(key) for key, _ in _default))
-    
+
     def __init__(self, **components):
         """
         Initialize a TcrDist object. Initialization can happen in two ways:
@@ -244,7 +244,7 @@ class TcrDist(Metric):
 
             # warn user that default has been initialised and inform required input format
             warnings.warn(self._default_msg, UserWarning)
-        
+
         self.components = parts
 
     def _check_input_format(self, ipt):
